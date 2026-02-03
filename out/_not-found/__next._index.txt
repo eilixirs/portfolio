@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
-3:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
-4:I[29306,["/_next/static/chunks/344f12bac951218c.js","/_next/static/chunks/017af1e17b02fb4e.js"],"default"]
-:HL["/_next/static/chunks/ca81200f2757b9df.css","style"]
-0:{"buildId":"ZUvlkZqGMSXln2XA6mWct","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/ca81200f2757b9df.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/344f12bac951218c.js","async":true}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"dm_sans_f26b0ff8-module__aXzNha__variable fraunces_fb0be553-module__dpf1Rq__variable long_cang_1771393a-module__SOMwxW__variable antialiased relative bg-bg-light text-text-dark font-sans leading-relaxed overflow-x-hidden","children":[["$","div",null,{"className":"pointer-events-none absolute inset-0 z-[5] opacity-80","style":{"backgroundImage":"url(\"/textures/dotnoise-light-grey.png\")","backgroundRepeat":"repeat"},"aria-hidden":"true"}],["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}],"notFound":[["$","$L4",null,{}],[]]}]]}]}]]}],"loading":null,"isPartial":false}
