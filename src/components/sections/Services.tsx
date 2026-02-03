@@ -1,7 +1,7 @@
 "use client";
 
 import { ServiceCard } from "@/components/ui/ServiceCard";
-import { FadeIn, StaggerItem, Section, DecoratedHeading } from "@/components/primitives";
+import { FadeIn, Section, DecoratedHeading } from "@/components/primitives";
 import { services } from "@/data/services";
 
 export function Services() {
@@ -14,10 +14,8 @@ export function Services() {
 
       <FadeIn delay={0.2} direction="none">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-px p-px bg-black/8">
-          {services.map((service, index) => (
-            <StaggerItem key={service.title} index={index}>
-              <ServiceCard service={service} />
-            </StaggerItem>
+          {services.map((service) => (
+            <ServiceCard key={service.title} service={service} />
           ))}
         </div>
       </FadeIn>
