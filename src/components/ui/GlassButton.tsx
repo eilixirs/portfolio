@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 const glassButton = tv({
   base: [
     "inline-block py-4 px-10",
-    "bg-white/40 backdrop-blur-md",
+    "bg-white",
     "border border-white/60 rounded-full",
     "text-text-dark no-underline font-medium text-sm",
-    "tracking-wide shadow-lg shadow-black/8",
+    "tracking-wide drop-shadow-[0_2px_6px_rgba(0,0,0,0.08)]",
     "transition-colors cursor-pointer",
   ],
   variants: {
@@ -49,10 +49,9 @@ export function GlassButton({
       className={cn(glassButton({ size, fullWidth }), className)}
       whileHover={{
         y: -2,
-        backgroundColor: "rgba(255, 255, 255, 0.6)",
-        boxShadow: "0 12px 40px rgba(0, 0, 0, 0.12)",
+        backgroundColor: "#fafafa",
       }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.24 }}
     >
       {children}
     </motion.a>

@@ -41,6 +41,7 @@ export function About() {
                 width={800}
                 height={1198}
                 className="w-full max-w-xs lg:max-w-none rounded-xl"
+                draggable={false}
                 priority
               />
             </ScaleIn>

@@ -12,7 +12,7 @@ export function Services() {
         <SectionHeading>What I do</SectionHeading>
 
         <FadeIn delay={0.2} direction="none">
-          <Grid columns="2">
+          <Grid columns="1">
             {services.map((service, index) => (
               <StaggerItem key={service.title} index={index}>
                 <ServiceCard service={service} />
