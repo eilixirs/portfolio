@@ -1,31 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { usePortfolio } from "./context";
 import { PortfolioCard } from "./PortfolioCard";
+import { FadeIn, StaggerItem, Grid } from "@/components/primitives";
 
 export function PortfolioGrid() {
   const { meta } = usePortfolio();
 
   return (
-    <motion.div
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-    >
-      {meta.items.map((item, index) => (
-        <motion.div
-          key={item.id}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.4, delay: index * 0.1 }}
-        >
-          <PortfolioCard item={item} />
-        </motion.div>
-      ))}
-    </motion.div>
+    <FadeIn delay={0.2} direction="none">
+      <Grid columns="3">
+        {meta.items.map((item, index) => (
+          <StaggerItem key={item.id} index={index}>
+            <PortfolioCard item={item} />
+          </StaggerItem>
+        ))}
+      </Grid>
+    </FadeIn>
   );
 }
