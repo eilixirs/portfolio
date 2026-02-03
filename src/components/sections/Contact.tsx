@@ -39,7 +39,6 @@ export function Contact() {
       >
         <ContactLink href="mailto:irisxie@outlook.com">Email</ContactLink>
         <ContactLink href="https://www.linkedin.com/in/iris-xie-sr/">LinkedIn</ContactLink>
-        <ContactLink href="tel:+16479909036">Phone</ContactLink>
       </FadeIn>
     </Section>
   );
