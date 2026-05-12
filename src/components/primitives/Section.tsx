@@ -6,6 +6,7 @@ interface SectionProps {
   children: React.ReactNode;
   className?: string;
   padding?: SectionPadding;
+  id?: string;
 }
 
 const paddingStyles: Record<SectionPadding, string> = {
@@ -17,9 +18,11 @@ export function Section({
   children,
   className,
   padding = "default",
+  id,
 }: SectionProps) {
   return (
     <section
+      id={id}
       className={cn(
         paddingStyles[padding],
         "relative z-10",

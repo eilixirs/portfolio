@@ -20,7 +20,7 @@ export const services: Service[] = [
       "Building visual identities that last. From brand governance frameworks to reusable asset templates, I ensure consistency while enabling teams to move fast. Expert in Figma, Adobe Creative Suite, and design systems.",
   },
   {
-    title: Executive Communication",
+    title: "Executive Communication",
     description:
       "Slide-driven storytelling and executive-ready deliverables. My work in PowerPoint has lead to publications that directly supported strategic decisions.",
   },
