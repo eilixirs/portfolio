@@ -6,17 +6,14 @@ import {
   FloraIllustrationTop,
   FloraIllustrationBottom,
 } from "@/components/sections/FloraIllustration";
-import { getAllBlogPosts } from "@/lib/blog";
 
 export default function Home() {
-  const blogPosts = getAllBlogPosts();
-
   return (
     <main className="relative min-h-screen grid grid-cols-[1fr_min(56rem,100%-2*clamp(1.5rem,3vw,2.5rem))_1fr] *:col-start-2 gap-y-18">
       <FloraIllustrationTop />
       <About />
       <Services />
-      <BlogSection posts={blogPosts} />
+      <BlogSection />
       <Contact />
       <FloraIllustrationBottom className="col-span-full! max-w-7xl w-full h-auto justify-self-center" />
     </main>
