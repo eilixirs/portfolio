@@ -48,20 +48,20 @@ export const projects: Project[] = [
   },
   {
     slug: "qbr",
-    name: "QBR",
-    shortDescription: "Brand & Editorial Design",
+    name: "QBR Sponsorship Package",
+    shortDescription: "Editorial Design",
     longDescription:
-      "Brand and editorial design work for QBR, bringing a cohesive visual system to its layouts and published materials.",
+      "Created as Editor-in-Chief of QBR, this sponsorship package was designed to communicate the publication's value to prospective partners — one of a broader suite of organizational documents built on a consistent editorial system.",
     date: "2025-01-01",
     thumbnail: "/thumbnails/qbr.jpg",
     pdf: "/pdfs/qbr.pdf",
   },
   {
     slug: "qbr-exec",
-    name: "QBR Exec",
-    shortDescription: "Brand & Editorial Design",
+    name: "QBR Publication Cover",
+    shortDescription: "Art Direction & Design",
     longDescription:
-      "Executive-facing design work for QBR — a polished extension of the brand system applied to leadership materials.",
+      "An end-to-end publication cover for QBR, owned from concept through execution — ideation, photoshoot direction and setup, graphic design, and final editing.",
     date: "2025-01-01",
     thumbnail: "/thumbnails/qbr-exec.jpg",
     // No pdf — falls back to the full-resolution thumbnail.
