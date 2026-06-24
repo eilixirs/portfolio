@@ -17,6 +17,26 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "asu",
+    name: "ASU Mini Brand",
+    shortDescription: "Brand Identity",
+    longDescription:
+      "A compact brand identity system for ASU, distilling the brand into its essential elements — logo, color, type, and core applications — into a concise, usable mini guideline.",
+    date: "2026-01-01",
+    thumbnail: "/thumbnails/asu.png",
+    pdf: "/pdfs/asu.pdf",
+  },
+  {
+    slug: "noemi",
+    name: "Noemi Brand Deck",
+    shortDescription: "Brand Identity & Strategy",
+    longDescription:
+      "A full brand deck for Noemi, pairing brand strategy with a complete visual identity system — from positioning and voice through logo, palette, typography, and applied collateral.",
+    date: "2026-01-01",
+    thumbnail: "/thumbnails/noemi.png",
+    pdf: "/pdfs/noemi.pdf",
+  },
+  {
     slug: "logofolio",
     name: "Logofolio",
     shortDescription: "Logo & Brand Identity",
