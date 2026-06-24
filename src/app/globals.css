@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg-light: #f7f7f5;
+  --color-bg-light: #fdfdfc;
   --color-text-dark: #1a1816;
   --color-text-medium: #4a4745;
   --color-accent-green: #00e5b8;
@@ -9,5 +9,7 @@
   --color-accent-peach: #ffb8a8;
   --color-white: #ffffff;
 
+  --font-sans: var(--font-geist);
+  --font-serif: var(--font-geist);
   --font-chinese: var(--font-long-cang);
 }

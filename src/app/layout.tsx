@@ -1,20 +1,12 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces, Long_Cang } from "next/font/google";
+import { Geist, Long_Cang } from "next/font/google";
 import { PaperTexture } from "@/components/primitives";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const fraunces = Fraunces({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  style: "italic",
-  weight: ["400", "500", "600", "700"],
 });
 
 const longCang = Long_Cang({
@@ -61,8 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(
-        dmSans.variable,
-        fraunces.variable,
+        geist.variable,
         longCang.variable,
         "antialiased relative bg-bg-light text-text-dark font-sans leading-relaxed overflow-x-hidden"
       )}>

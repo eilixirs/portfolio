@@ -15,14 +15,16 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       href={`/projects/${project.slug}/`}
       className={cn("flex flex-col gap-4 group", className)}
     >
-      <Image
-        src={project.thumbnail}
-        alt={project.name}
-        width={0}
-        height={0}
-        sizes="(min-width: 640px) 33vw, 50vw"
-        className="w-full h-auto bg-bg-light"
-      />
+      <div className="overflow-hidden">
+        <Image
+          src={project.thumbnail}
+          alt={project.name}
+          width={0}
+          height={0}
+          sizes="(min-width: 640px) 33vw, 50vw"
+          className="w-full h-auto bg-bg-light transition-transform duration-500 ease-out group-hover:scale-105"
+        />
+      </div>
       <div className="flex flex-col gap-1">
         <Heading level={3} className="mb-0">
           {project.name}
