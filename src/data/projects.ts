@@ -58,10 +58,10 @@ export const projects: Project[] = [
   },
   {
     slug: "student-starts",
-    name: "Student Starts",
-    shortDescription: "Brand Identity & Campaign",
+    name: "StudentStarts",
+    shortDescription: "Marketing & Event Logistics",
     longDescription:
-      "Brand identity and marketing materials for Student Starts, an education-focused initiative. The work pairs an energetic, approachable visual system with campaign collateral built to drive student engagement and turnout.",
+      "A 24-hour business case competition where student teams race the clock to crack a real-world brief — spanning the marketing campaign that drove registration and turnout and the event logistics that kept it running from kickoff to final pitches.",
     date: "2019-07-01",
     thumbnail: "/thumbnails/student-starts.png",
     pdf: "/pdfs/student-starts.pdf",
