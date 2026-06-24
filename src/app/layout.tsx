@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Long_Cang } from "next/font/google";
+import { Geist, Fraunces, Long_Cang } from "next/font/google";
 import { PaperTexture } from "@/components/primitives";
 import { cn } from "@/lib/utils";
 import "./globals.css";
@@ -7,6 +7,13 @@ import "./globals.css";
 const geist = Geist({
   variable: "--font-geist",
   subsets: ["latin"],
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  style: "italic",
+  weight: ["400", "500", "600", "700"],
 });
 
 const longCang = Long_Cang({
@@ -54,6 +61,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(
         geist.variable,
+        fraunces.variable,
         longCang.variable,
         "antialiased relative bg-bg-light text-text-dark font-sans leading-relaxed overflow-x-hidden"
       )}>
