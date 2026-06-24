@@ -48,12 +48,12 @@ export const projects: Project[] = [
   },
   {
     slug: "gm",
-    name: "GM Marketing Campaign",
+    name: "GM Marketing Communications Plan",
     shortDescription: "Integrated Marketing Campaign",
     longDescription:
       "A pitch presentation for General Motors' 2026 compact SUV lineup, pairing strategic market analysis with an integrated, multi-channel campaign concept. The deck moves from audience insight through creative direction to a measurable activation plan.",
     date: "2025-05-01",
-    thumbnail: "/thumbnails/gm.jpg",
+    thumbnail: "/thumbnails/gm.png",
     pdf: "/pdfs/gm.pdf",
   },
   {
@@ -78,13 +78,13 @@ export const projects: Project[] = [
   },
   {
     slug: "qbr-exec",
-    name: "QBR Publication Cover",
+    name: "QBR Business Publication",
     shortDescription: "Art Direction & Design",
     longDescription:
-      "An end-to-end publication cover for QBR, owned from concept through execution — ideation, photoshoot direction and setup, graphic design, and final editing.",
+      "An end-to-end business publication for QBR, owned from concept through execution — ideation, photoshoot direction and setup, graphic design, and final editing.",
     date: "2025-01-01",
-    thumbnail: "/thumbnails/qbr-exec.jpg",
-    // No pdf — falls back to the full-resolution thumbnail.
+    thumbnail: "/thumbnails/qbr-exec.png",
+    pdf: "/pdfs/qbr-exec.pdf",
   },
   {
     slug: "stillness",
