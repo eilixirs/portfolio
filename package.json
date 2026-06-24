@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "pdf:previews": "bun scripts/generate-pdf-previews.mjs",
+    "prebuild": "bun scripts/generate-pdf-previews.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "blurhash": "^2.0.5",
     "clsx": "^2.1.1",
     "framer-motion": "^12.30.0",
     "gray-matter": "^4.0.3",
@@ -22,6 +25,7 @@
     "tailwind-variants": "^3.2.2"
   },
   "devDependencies": {
+    "@napi-rs/canvas": "^0.1.80",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4",
     "@types/mdx": "^2.0.13",
