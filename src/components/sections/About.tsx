@@ -15,21 +15,12 @@ export function About() {
             </DecoratedHeading.Root>
             <Text className="mb-5">
               I&apos;m a strategic marketer and creative problem-solver who&apos;s been obsessed
-              with design since day one. I&apos;ve got passion for building brands that resonate
-              and systems that feel frictionless. Currently pursuing a Bachelor of Commerce at
-              Queen&apos;s University, Canada.
-            </Text>
-            <Text className="mb-5">
-              I&apos;m fond of photography, UX/UI design, and context engineering.
-              I&apos;ve traveled to 27 countries, and can hold a conversation
-              with anyone in Mandarin Chinese.
+              with design since day one. I love building brands that resonate and systems that
+              feel frictionless.
             </Text>
             <Text>
-              I spend my days figuring out how to best turn vague ideas into compelling
-              visuals, whether that's a pitch deck, a brand guide, or a video.
-              Above all, I&apos;m a sucker for designs that tell a story, working my way
-              through innovative, impactful projects. Currently I'm hooked on optimizing my 
-              efficiency, one (actually multiple) agent at a time.
+              With a Bachelor of Commerce at Queen&apos;s University, Canada, I spend my days
+              telling the stories behind innovative, impactful projects that catch my eye.
             </Text>
           </div>
 
