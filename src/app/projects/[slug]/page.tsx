@@ -56,13 +56,15 @@ export default async function ProjectPage({
             <span>Back</span>
           </Link>
 
-          <Heading level={1}>{project.name}</Heading>
+          <Heading level={1} className="mb-2">
+            {project.name}
+          </Heading>
 
-          <p className="text-sm text-text-medium tracking-wide mb-6 -mt-2">
+          <Text variant="muted" className="mb-8">
             {formattedDate}
-          </p>
+          </Text>
 
-          <Text variant="lead" className="mb-5">
+          <Text variant="lead" className="mb-4">
             {project.shortDescription}
           </Text>
 
