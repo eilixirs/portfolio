@@ -9,8 +9,8 @@ interface HeadingProps {
 }
 
 const levelStyles: Record<HeadingLevel, string> = {
-  1: "font-fraunces text-5xl md:text-6xl font-light mb-6 tracking-[-0.08em] italic text-left",
-  2: "font-fraunces text-5xl font-light mb-6 tracking-[-0.08em] italic text-left",
+  1: "font-serif text-5xl md:text-6xl font-light mb-6 tracking-[-0.08em] italic text-left",
+  2: "font-serif text-5xl font-light mb-6 tracking-[-0.08em] italic text-left",
   3: "font-sans text-md font-medium mb-4 tracking-tight",
   4: "font-sans text-sm font-light tracking-tight",
 };
