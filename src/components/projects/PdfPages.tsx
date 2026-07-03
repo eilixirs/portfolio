@@ -45,7 +45,18 @@ function Blurhash({
     ctx.putImageData(imageData, 0, 0);
   }, [hash, w, h]);
 
-  return <canvas ref={ref} width={w} height={h} className={className} />;
+  // aspectRatio (exact float) drives height when the canvas is in normal flow
+  // (the loading stack), so it matches the real page height and doesn't reflow.
+  // It's ignored when the canvas is absolutely filled (inset-0) behind a page.
+  return (
+    <canvas
+      ref={ref}
+      width={w}
+      height={h}
+      className={className}
+      style={{ aspectRatio: String(aspect) }}
+    />
+  );
 }
 
 interface PdfPagesProps {
@@ -82,56 +93,70 @@ export default function PdfPages({ file }: PdfPagesProps) {
 
   // leading-none + block pages = no whitespace gaps; edges touch.
   return (
-    <div ref={containerRef} className="relative w-full leading-none">
-      {/* Placeholder layer (normal flow): gives the container its height with no
-          layout shift and shows a blurred preview during the slow download. It
-          stays put; each real page fades in on top of it once painted. */}
-      {preview?.map((p, i) => (
-        <Blurhash
-          key={i}
-          hash={p.hash}
-          aspect={p.aspect}
-          className="block w-full"
-        />
-      ))}
-
-      {/* Real PDF — layered over the placeholders when we have them. react-pdf
-          paints a white Page background the instant it mounts (Page.js sets
-          backgroundColor: 'white'), which would hide the blur before the canvas
-          rasterizes. So each page stays invisible until its onRenderSuccess
-          fires — i.e. the switch happens exactly when the page finishes
-          rendering — then fades in over the blur. */}
-      <div className={preview ? "absolute inset-0" : undefined}>
-        <Document
-          file={file}
-          onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-          loading={
-            preview ? null : (
-              <p className="text-sm text-text-medium">Loading document…</p>
-            )
-          }
-          error={<p className="text-sm text-text-medium">Could not load PDF.</p>}
-        >
-          {width > 0 &&
-            Array.from({ length: pageCount }, (_, i) => (
-              <Page
+    <div ref={containerRef} className="w-full leading-none">
+      <Document
+        file={file}
+        onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+        // During the (slow) download the document has no pages yet, so react-pdf
+        // renders this instead: a blurred, correctly-proportioned stack of every
+        // page. Once loaded it's replaced by the real pages below.
+        loading={
+          preview ? (
+            preview.map((p, i) => (
+              <Blurhash
                 key={i}
-                pageNumber={i + 1}
-                width={width}
-                renderTextLayer={false}
-                renderAnnotationLayer={false}
-                onRenderSuccess={() => markRendered(i)}
-                loading=""
-                className={clsx(
-                  "block [&_canvas]:!w-full [&_canvas]:!h-auto",
-                  // Only gate visibility when a blur placeholder sits behind it.
-                  preview && "transition-opacity duration-500",
-                  preview && !rendered.has(i) && "opacity-0",
-                )}
+                hash={p.hash}
+                aspect={p.aspect}
+                className="block w-full"
               />
-            ))}
-        </Document>
-      </div>
+            ))
+          ) : (
+            <p className="text-sm text-text-medium">Loading document…</p>
+          )
+        }
+        error={<p className="text-sm text-text-medium">Could not load PDF.</p>}
+      >
+        {width > 0 &&
+          Array.from({ length: pageCount }, (_, i) => {
+            const p = preview?.[i];
+            // Each page owns its own blur: the real Page defines the wrapper
+            // height (opacity doesn't affect layout), and the blur sits absolutely
+            // behind it filling exactly that box — so it can never drift out from
+            // under the page the way a single shared overlay did.
+            return (
+              <div key={i} className="relative block">
+                {p && (
+                  <Blurhash
+                    hash={p.hash}
+                    aspect={p.aspect}
+                    className={clsx(
+                      "absolute inset-0 h-full w-full transition-opacity duration-500",
+                      rendered.has(i) ? "opacity-0" : "opacity-100",
+                    )}
+                  />
+                )}
+                {/* react-pdf paints a white Page background the instant it mounts
+                    (Page.js sets backgroundColor: 'white'), which would hide the
+                    blur before the canvas rasterizes. So the page stays invisible
+                    until its onRenderSuccess fires — the switch happens exactly
+                    when the page finishes rendering — then fades in over the blur. */}
+                <Page
+                  pageNumber={i + 1}
+                  width={width}
+                  renderTextLayer={false}
+                  renderAnnotationLayer={false}
+                  onRenderSuccess={() => markRendered(i)}
+                  loading=""
+                  className={clsx(
+                    "relative block [&_canvas]:!h-auto [&_canvas]:!w-full",
+                    preview && "transition-opacity duration-500",
+                    preview && !rendered.has(i) && "opacity-0",
+                  )}
+                />
+              </div>
+            );
+          })}
+      </Document>
     </div>
   );
 }
